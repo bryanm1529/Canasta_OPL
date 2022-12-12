@@ -9,6 +9,7 @@
 #include <random>
 
 #include <algorithm>
+using namespace std;
 
 Deck::Deck() {
     // Create a deck with 2 Jokers, 2 Deuces, and 4 copies of each other card
@@ -23,11 +24,13 @@ Deck::Deck() {
             cards_.emplace_back(Card::Suit(s), Card::Rank(r));
         }
     }
-    rng_.seed(std::random_device()());
+
+    rng_.seed(random_device()());
 }
 
+
 void Deck::shuffle() {
-    std::shuffle(cards_.begin(), cards_.end(), rng_);
+    ::shuffle(cards_.begin(), cards_.end(), rng_);
 }
 
 Card Deck::deal() {

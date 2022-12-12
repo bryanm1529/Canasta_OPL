@@ -8,6 +8,9 @@
 
 #include "card.h"
 #include <vector>
+#include <random>
+#include <algorithm>
+using namespace std;
 
 class Deck {
 public:
@@ -22,6 +25,9 @@ public:
 
     // Check if the deck is empty
     bool empty() const;
+
+    //Random number generator
+    mt19937 rng_;
 
 private:
     std::vector<Card> cards_;
